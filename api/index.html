@@ -1,0 +1,448 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>lightweight-charts</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.js" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="index.html" class="title">lightweight-charts</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="globals.html">Globals</a>
+				</li>
+			</ul>
+			<h1> lightweight-charts</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<h1 id="lightweight-charts">Lightweight Charts</h1>
+				<p><a href="https://circleci.com/gh/tradingview/lightweight-charts"><img src="https://img.shields.io/circleci/build/github/tradingview/lightweight-charts.svg" alt="CircleCI"></a>
+					<a href="https://www.npmjs.com/package/lightweight-charts"><img src="https://badge.fury.io/js/lightweight-charts.svg" alt="npm version"></a>
+					<a href="https://bundlephobia.com/result?p=lightweight-charts"><img src="https://badgen.net/bundlephobia/minzip/lightweight-charts" alt="npm bundle size"></a>
+					<img src="https://badgen.net/badge/dependencies/0/green" alt="Zero dependencies">
+				<a href="https://www.npmjs.com/package/lightweight-charts"><img src="https://img.shields.io/npm/dm/lightweight-charts.svg" alt="Downloads"></a></p>
+				<p><a href="https://www.tradingview.com/lightweight-charts/">Demos</a> | <a href="./docs/getting-started.md">Documentation</a></p>
+				<p>TradingView Lightweight Charts is one of the smallest and fastest financial HTML5 charts.</p>
+				<p>The Lightweight Charting Library is the best choice for you if you want to display financial data as an interactive chart on your web page without affecting your web page loading speed and performance.</p>
+				<p>It is the best choice for you if you want to replace static image charts with interactive ones.
+				The size of the library is close to static images but if you have dozens of image charts on a web page then using this library can make the size of your web page smaller.</p>
+				<h2 id="installing">Installing</h2>
+				<h3 id="es6-via-npm">es6 via npm</h3>
+				<pre><code class="language-bash">npm install lightweight-charts</code></pre>
+				<pre><code class="language-js"><span class="hljs-keyword">import</span> { createChart } <span class="hljs-keyword">from</span> <span class="hljs-string">'lightweight-charts'</span>;
+
+<span class="hljs-keyword">const</span> chart = createChart(<span class="hljs-built_in">document</span>.body, { <span class="hljs-attr">width</span>: <span class="hljs-number">400</span>, <span class="hljs-attr">height</span>: <span class="hljs-number">300</span> });
+<span class="hljs-keyword">const</span> lineSeries = chart.addLineSeries();
+lineSeries.setData([
+    { <span class="hljs-attr">time</span>: <span class="hljs-string">'2019-04-11'</span>, <span class="hljs-attr">value</span>: <span class="hljs-number">80.01</span> },
+    { <span class="hljs-attr">time</span>: <span class="hljs-string">'2019-04-12'</span>, <span class="hljs-attr">value</span>: <span class="hljs-number">96.63</span> },
+    { <span class="hljs-attr">time</span>: <span class="hljs-string">'2019-04-13'</span>, <span class="hljs-attr">value</span>: <span class="hljs-number">76.64</span> },
+    { <span class="hljs-attr">time</span>: <span class="hljs-string">'2019-04-14'</span>, <span class="hljs-attr">value</span>: <span class="hljs-number">81.89</span> },
+    { <span class="hljs-attr">time</span>: <span class="hljs-string">'2019-04-15'</span>, <span class="hljs-attr">value</span>: <span class="hljs-number">74.43</span> },
+    { <span class="hljs-attr">time</span>: <span class="hljs-string">'2019-04-16'</span>, <span class="hljs-attr">value</span>: <span class="hljs-number">80.01</span> },
+    { <span class="hljs-attr">time</span>: <span class="hljs-string">'2019-04-17'</span>, <span class="hljs-attr">value</span>: <span class="hljs-number">96.63</span> },
+    { <span class="hljs-attr">time</span>: <span class="hljs-string">'2019-04-18'</span>, <span class="hljs-attr">value</span>: <span class="hljs-number">76.64</span> },
+    { <span class="hljs-attr">time</span>: <span class="hljs-string">'2019-04-19'</span>, <span class="hljs-attr">value</span>: <span class="hljs-number">81.89</span> },
+    { <span class="hljs-attr">time</span>: <span class="hljs-string">'2019-04-20'</span>, <span class="hljs-attr">value</span>: <span class="hljs-number">74.43</span> },
+]);</code></pre>
+				<h3 id="cdn">CDN</h3>
+				<p>You can use <a href="https://unpkg.com/">unpkg</a>:</p>
+				<p><a href="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js">https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js</a></p>
+				<p>The standalone version creates <code>window.LightweightCharts</code> object with all exports from <code>esm</code> version:</p>
+				<pre><code class="language-js"><span class="hljs-keyword">const</span> chart = LightweightCharts.createChart(<span class="hljs-built_in">document</span>.body, { <span class="hljs-attr">width</span>: <span class="hljs-number">400</span>, <span class="hljs-attr">height</span>: <span class="hljs-number">300</span> });
+<span class="hljs-keyword">const</span> lineSeries = chart.addLineSeries();
+lineSeries.setData([
+    { <span class="hljs-attr">time</span>: <span class="hljs-string">'2019-04-11'</span>, <span class="hljs-attr">value</span>: <span class="hljs-number">80.01</span> },
+    { <span class="hljs-attr">time</span>: <span class="hljs-string">'2019-04-12'</span>, <span class="hljs-attr">value</span>: <span class="hljs-number">96.63</span> },
+    { <span class="hljs-attr">time</span>: <span class="hljs-string">'2019-04-13'</span>, <span class="hljs-attr">value</span>: <span class="hljs-number">76.64</span> },
+    { <span class="hljs-attr">time</span>: <span class="hljs-string">'2019-04-14'</span>, <span class="hljs-attr">value</span>: <span class="hljs-number">81.89</span> },
+    { <span class="hljs-attr">time</span>: <span class="hljs-string">'2019-04-15'</span>, <span class="hljs-attr">value</span>: <span class="hljs-number">74.43</span> },
+    { <span class="hljs-attr">time</span>: <span class="hljs-string">'2019-04-16'</span>, <span class="hljs-attr">value</span>: <span class="hljs-number">80.01</span> },
+    { <span class="hljs-attr">time</span>: <span class="hljs-string">'2019-04-17'</span>, <span class="hljs-attr">value</span>: <span class="hljs-number">96.63</span> },
+    { <span class="hljs-attr">time</span>: <span class="hljs-string">'2019-04-18'</span>, <span class="hljs-attr">value</span>: <span class="hljs-number">76.64</span> },
+    { <span class="hljs-attr">time</span>: <span class="hljs-string">'2019-04-19'</span>, <span class="hljs-attr">value</span>: <span class="hljs-number">81.89</span> },
+    { <span class="hljs-attr">time</span>: <span class="hljs-string">'2019-04-20'</span>, <span class="hljs-attr">value</span>: <span class="hljs-number">74.43</span> },
+]);</code></pre>
+				<h2 id="development">Development</h2>
+				<p>Note that the minimal supported version of <a href="https://nodejs.org/">NodeJS</a> for development is 10.</p>
+				<h3 id="compiling">Compiling</h3>
+				<ul>
+					<li><code>npm run tsc</code> - compiles the source code only (excluding tests)</li>
+					<li><code>npm run tsc-watch</code> - runs the TypeScript compiler in the watch mode for source code (same as <code>tsc</code>, but in the watch mode)</li>
+					<li><code>npm run tsc-all</code> - compiles everything (source code and tests)</li>
+					<li><code>npm run tsc-all-watch</code> - runs the TypeScript compiler in watch mode for source code and tests (same as <code>tsc-all</code>, but in watch mode)</li>
+				</ul>
+				<h3 id="bundling">Bundling</h3>
+				<ul>
+					<li><code>npm run rollup</code> - runs Rollup to bundle code</li>
+					<li><code>npm run build</code> - compiles source code and bundles it (as one word for <code>npm run tsc &amp;&amp; npm run rollup</code>)</li>
+				</ul>
+				<p>Note that only the dev version is bundled by default.
+				To bundle production builds (minified) too just set the <code>NODE_ENV</code> variable to <code>production</code> and run bundling, e.g. <code>NODE_ENV=production npm run rollup</code>.</p>
+				<h3 id="testing">Testing</h3>
+				<ul>
+					<li><code>npm run lint</code> - runs lint for the code</li>
+					<li><code>npm run test</code> - runs unit-tests</li>
+				</ul>
+				<h3 id="tips">Tips</h3>
+				<p>To make sure that your local copy passed all (almost) checks, you can use the <code>verify</code> npm script: <code>npm run verify</code>.</p>
+				<h2 id="license">License</h2>
+				<p>Licensed under the Apache License, Version 2.0 (the &quot;License&quot;); you may not use this software except in compliance with the License.
+					You may obtain a copy of the License at LICENSE file.
+				Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an &quot;AS IS&quot; BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.</p>
+				<p>This software incorporates several parts of tslib (<a href="https://github.com/Microsoft/tslib">https://github.com/Microsoft/tslib</a>, (c) Microsoft Corporation) that are covered by the the Apache License, Version 2.0.</p>
+				<p>This license requires specifying TradingView as the product creator. You can use one of the following methods to do it:</p>
+				<ul>
+					<li>do not disable the TradingView branding displaying;</li>
+					<li>add the &quot;attribution notice&quot; from the NOTICE file and a link to our website (<a href="https://www.tradingview.com/">https://www.tradingview.com/</a>) to the page of your website or mobile application that is available to your users;</li>
+				</ul>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="globals.html"><em>Globals</em></a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-enum">
+						<a href="enums/crosshairmode.html" class="tsd-kind-icon">Crosshair<wbr>Mode</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/linestyle.html" class="tsd-kind-icon">Line<wbr>Style</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/linetype.html" class="tsd-kind-icon">Line<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/pricescalemode.html" class="tsd-kind-icon">Price<wbr>Scale<wbr>Mode</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/areastyleoptions.html" class="tsd-kind-icon">Area<wbr>Style<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/bardata.html" class="tsd-kind-icon">Bar<wbr>Data</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/barstyleoptions.html" class="tsd-kind-icon">Bar<wbr>Style<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/businessday.html" class="tsd-kind-icon">Business<wbr>Day</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/candlestyleoptions.html" class="tsd-kind-icon">Candle<wbr>Style<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/chartoptions.html" class="tsd-kind-icon">Chart<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/crosshairlineoptions.html" class="tsd-kind-icon">Crosshair<wbr>Line<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/crosshairoptions.html" class="tsd-kind-icon">Crosshair<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/gridlineoptions.html" class="tsd-kind-icon">Grid<wbr>Line<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/gridoptions.html" class="tsd-kind-icon">Grid<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/handlescaleoptions.html" class="tsd-kind-icon">Handle<wbr>Scale<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/handlescrolloptions.html" class="tsd-kind-icon">Handle<wbr>Scroll<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/histogramdata.html" class="tsd-kind-icon">Histogram<wbr>Data</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/histogramstyleoptions.html" class="tsd-kind-icon">Histogram<wbr>Style<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/ichartapi.html" class="tsd-kind-icon">IChart<wbr>Api</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/ipriceformatter.html" class="tsd-kind-icon">IPrice<wbr>Formatter</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/ipricescaleapi.html" class="tsd-kind-icon">IPrice<wbr>Scale<wbr>Api</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-has-type-parameter">
+						<a href="interfaces/iseriesapi.html" class="tsd-kind-icon">ISeries<wbr>Api</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/itimescaleapi.html" class="tsd-kind-icon">ITime<wbr>Scale<wbr>Api</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/layoutoptions.html" class="tsd-kind-icon">Layout<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/linedata.html" class="tsd-kind-icon">Line<wbr>Data</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/linestyleoptions.html" class="tsd-kind-icon">Line<wbr>Style<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/localizationoptions.html" class="tsd-kind-icon">Localization<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/mouseeventparams.html" class="tsd-kind-icon">Mouse<wbr>Event<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/nonoverlayseriesspecificoptions.html" class="tsd-kind-icon">Non<wbr>Overlay<wbr>Series<wbr>Specific<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/overlayseriesspecificoptions.html" class="tsd-kind-icon">Overlay<wbr>Series<wbr>Specific<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/point.html" class="tsd-kind-icon">Point</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/priceformat.html" class="tsd-kind-icon">Price<wbr>Format</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/pricescalemargins.html" class="tsd-kind-icon">Price<wbr>Scale<wbr>Margins</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/pricescaleoptions.html" class="tsd-kind-icon">Price<wbr>Scale<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/seriesdataitemtypemap.html" class="tsd-kind-icon">Series<wbr>Data<wbr>Item<wbr>Type<wbr>Map</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/seriesoptionscommon.html" class="tsd-kind-icon">Series<wbr>Options<wbr>Common</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/seriesoptionsmap.html" class="tsd-kind-icon">Series<wbr>Options<wbr>Map</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/seriespartialoptionsmap.html" class="tsd-kind-icon">Series<wbr>Partial<wbr>Options<wbr>Map</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/timerange.html" class="tsd-kind-icon">Time<wbr>Range</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/timescaleoptions.html" class="tsd-kind-icon">Time<wbr>Scale<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/watermarkoptions.html" class="tsd-kind-icon">Watermark<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#areaseriesoptions" class="tsd-kind-icon">Area<wbr>Series<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#areaseriespartialoptions" class="tsd-kind-icon">Area<wbr>Series<wbr>Partial<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#barprice" class="tsd-kind-icon">Bar<wbr>Price</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#barseriesoptions" class="tsd-kind-icon">Bar<wbr>Series<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#barseriespartialoptions" class="tsd-kind-icon">Bar<wbr>Series<wbr>Partial<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#candleseriesoptions" class="tsd-kind-icon">Candle<wbr>Series<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#candleseriespartialoptions" class="tsd-kind-icon">Candle<wbr>Series<wbr>Partial<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#coordinate" class="tsd-kind-icon">Coordinate</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#dateformat" class="tsd-kind-icon">Date<wbr>Format</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+						<a href="globals.html#deeppartial" class="tsd-kind-icon">Deep<wbr>Partial</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#histogramseriesoptions" class="tsd-kind-icon">Histogram<wbr>Series<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#histogramseriespartialoptions" class="tsd-kind-icon">Histogram<wbr>Series<wbr>Partial<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#horzalign" class="tsd-kind-icon">Horz<wbr>Align</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#lineseriesoptions" class="tsd-kind-icon">Line<wbr>Series<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#lineseriespartialoptions" class="tsd-kind-icon">Line<wbr>Series<wbr>Partial<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#linewidth" class="tsd-kind-icon">Line<wbr>Width</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#mouseeventhandler" class="tsd-kind-icon">Mouse<wbr>Event<wbr>Handler</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+						<a href="globals.html#nominal" class="tsd-kind-icon">Nominal</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#priceaxisposition" class="tsd-kind-icon">Price<wbr>Axis<wbr>Position</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#priceformatterfn" class="tsd-kind-icon">Price<wbr>Formatter<wbr>Fn</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+						<a href="globals.html#seriesoptions" class="tsd-kind-icon">Series<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+						<a href="globals.html#seriespartialoptions" class="tsd-kind-icon">Series<wbr>Partial<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#seriestype" class="tsd-kind-icon">Series<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#time" class="tsd-kind-icon">Time</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#timeformatterfn" class="tsd-kind-icon">Time<wbr>Formatter<wbr>Fn</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#timerangechangeeventhandler" class="tsd-kind-icon">Time<wbr>Range<wbr>Change<wbr>Event<wbr>Handler</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#utctimestamp" class="tsd-kind-icon">UTCTimestamp</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#vertalign" class="tsd-kind-icon">Vert<wbr>Align</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#createchart" class="tsd-kind-icon">create<wbr>Chart</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#isbusinessday" class="tsd-kind-icon">is<wbr>Business<wbr>Day</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#isutctimestamp" class="tsd-kind-icon">isUTCTimestamp</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#version" class="tsd-kind-icon">version</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="assets/js/search.js"><' + '/script>');</script>
+</body>
+</html>
